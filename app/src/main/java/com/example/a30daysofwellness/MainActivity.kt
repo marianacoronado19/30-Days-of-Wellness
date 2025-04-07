@@ -73,6 +73,8 @@ fun WellnessApp() {
                 WellnessTopAppBar()
             }
         ) { innerPadding ->
+            // objeto do tipo PaddingValues gerado automaticamente, contém as margens necessárias para acomodar elementos como topBar
+            // innerPadding é passado para contentPadding, garantindo que os itens da lista não fiquem colados em Scaffold
             LazyColumn(
                 contentPadding = innerPadding,
                 verticalArrangement = Arrangement.spacedBy(12.dp)) {
@@ -89,7 +91,7 @@ fun WellnessApp() {
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun WellnessTopAppBar(modifier: Modifier = Modifier) {
-    CenterAlignedTopAppBar(
+    CenterAlignedTopAppBar( // usada pra criar barra do topo que tem conteúdo alinhado ao centro
         title = {
             Row(verticalAlignment = Alignment.CenterVertically){
                 Text(
@@ -106,22 +108,24 @@ fun WellnessTopAppBar(modifier: Modifier = Modifier) {
 fun WellnessCard(task: Task, modifier: Modifier = Modifier) {
     var expanded by remember { mutableStateOf(false) }
     Card(
-        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp), // adiciona sombra / efeito de elevação do card
-        modifier = Modifier.fillMaxWidth()
+        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp), // adiciona sombra /
+        // efeito de elevação do card
+        modifier = Modifier
+            .fillMaxWidth()
+            .animateContentSize(
+                animationSpec = spring( // tipo de animação -> como uma mola
+                    dampingRatio = Spring.DampingRatioNoBouncy, // sem amortecimento
+                    stiffness = Spring.StiffnessMedium // rigidez da mola
+                )
+            )
     ) {
         Column {
             Text(
                 text = stringResource(id = task.name),
                 style = MaterialTheme.typography.displayMedium,
+                color = Color.Gray,
                 modifier = Modifier
                     .padding(8.dp)
-                    .animateContentSize(
-                        animationSpec = spring( // tipo de animação
-                            dampingRatio = Spring.DampingRatioNoBouncy,
-                            stiffness = Spring.StiffnessMedium
-                        )
-                    ) ,
-                color = Color.Gray
             )
             Text(
                 text = stringResource(id = task.description),
@@ -154,12 +158,13 @@ fun WellnessCard(task: Task, modifier: Modifier = Modifier) {
 
 @Composable
 private fun WellnessItemButton(
-    expanded: Boolean,
-    onClick: () -> Unit,
+    expanded: Boolean, // vai receber var expanded
+    onClick: () -> Unit, // lambda pra quando for clicado, torna o botão reutilizável em
+    // diferentes cenários. Não retorna Unit.
     modifier: Modifier = Modifier
 ){
     IconButton(
-        onClick = onClick,
+        onClick = onClick, // quando o botão for clicado, executa onClick da função
         modifier = modifier
     ) {
         Icon(
