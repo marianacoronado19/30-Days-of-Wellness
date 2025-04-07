@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">30 Days of Wellness</string>
+    <string name="day1">Day 1</string>
+    <string name="day2">Day 2</string>
+    <string name="day3">Day 3</string>
+    <string name="day4">Day 4</string>
+    <string name="day5">Day 5</string>
+    <string name="day6">Day 6</string>
+    <string name="day7">Day 7</string>
+    <string name="day8">Day 8</string>
+    <string name="day9">Day 9</string>
+    <string name="day10">Day 10</string>
+    <string name="task1">Spend 15 minutes outdoors</string>
+    <string name="task2">Listen to a new podcast or audiobook</string>
+    <string name="task3">Meditate for at least 3 minutes</string>
+    <string name="task4">Write down 3 things you are grateful for</string>
+    <string name="task5">Take a 20-minute walk without your phone</string>
+    <string name="task6">Drink 8 glasses of water today</string>
+    <string name="task7">Stretch your body for 10 minutes</string>
+    <string name="task8">Declutter one small area of your home</string>
+    <string name="task9">Try a new healthy recipe</string>
+    <string name="task10">Call or text a friend you haven’t talked to in a while</string>
+    <string name="task1_desc">Take a break and connect with nature. Go for a short walk or simply sit outside to relax your mind.</string>
+    <string name="task2_desc">Discover something new and inspiring through a podcast or audiobook of your choice.</string>
+    <string name="task3_desc">Pause your day and focus on your breath. Even a few minutes of meditation can improve clarity.</string>
+    <string name="task4_desc">Reflect on the positive aspects of your life and write them down to boost your mood.</string>
+    <string name="task5_desc">Unplug from screens and enjoy a mindful walk, observing your surroundings with presence.</string>
+    <string name="task6_desc">Stay hydrated to support your body and mind. Track your intake throughout the day.</string>
+    <string name="task7_desc">Gently stretch to release tension and increase flexibility. Focus on areas that feel tight.</string>
+    <string name="task8_desc">Pick a drawer, shelf, or corner to tidy up. A cleaner space can help clear your mind too.</string>
+    <string name="task9_desc">Cook something nutritious and new. Explore ingredients that support your well-being.</string>
+    <string name="task10_desc">Reconnect with someone meaningful. A quick message can brighten both your days.</string>
+    <string name="expand_button_content_description">Botão para expandir a descrição</string>
+</resources>
